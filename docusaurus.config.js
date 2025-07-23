@@ -91,14 +91,14 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Start Here',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+      {
+        href: 'https://coway.co.th',
+        label: 'เว็บไซต์หลัก',
+        position: 'right',
+      },
         ],
       },
       footer: {
@@ -109,7 +109,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/',
               },
             ],
           },
@@ -117,16 +117,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Facebook Coway Thailand Official',
+                href: 'https://www.facebook.com/CowayThailandOfficial',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Line Coway Thailand Official',
+                href: 'https://page.line.me/coway-thailand',
               },
             ],
           },
@@ -137,14 +133,10 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Coway (Thailand) Co.,Ltd. (Head office)`,
       },
       prism: {
         theme: prismThemes.github,

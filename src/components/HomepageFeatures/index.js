@@ -4,32 +4,33 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'ใช้งานง่าย ใคร ๆ ก็เข้าใจได้',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        ไม่ว่าคุณจะเป็นพนักงานใหม่ ตัวแทนขาย ทีมบริการ หรือแม้แต่ลูกค้า Coway Docs 
+        ช่วยให้คุณเข้าใจขั้นตอนต่าง ๆ ได้ง่าย ตั้งแต่การใช้งานระบบ การสั่งซื้อสินค้า 
+        ไปจนถึงการติดตั้งหรือขอรับบริการ
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'รวมทุกข้อมูลไว้ในที่เดียว',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        เรารวมข้อมูลสำคัญที่คุณต้องใช้ไว้ทั้งหมด ทั้งคู่มือการใช้งาน ระบบการทำงานของทีมต่าง ๆ 
+        คำถามที่พบบ่อย และแนวทางการแก้ปัญหาเบื้องต้น ไม่ต้องเสียเวลาค้นหาหลายที่อีกต่อไป
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'พร้อมช่วยเหลือคุณทุกเมื่อ',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Coway Docs พร้อมเป็นผู้ช่วยของคุณตลอดเวลา จะเข้าจากมือถือหรือคอมก็ได้ 
+        เราพัฒนาระบบให้เข้าถึงง่ายและอัปเดตสม่ำเสมอ เพื่อให้คุณทำงานหรือใช้งาน Coway ได้อย่างมั่นใจ
       </>
     ),
   },
