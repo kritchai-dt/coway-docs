@@ -1,7 +1,7 @@
 ---
 id: ocr-guidelines
 title: การใช้งาน OCR บน Coway Mall
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # การใช้งาน OCR บน Coway Mall
