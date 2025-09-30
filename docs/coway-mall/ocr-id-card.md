@@ -1,31 +1,109 @@
 ---
-sidebar_position: 2
+id: ocr-guidelines
+title: การใช้งาน OCR บน Coway Mall
+sidebar_position: 1
 ---
 
-# OCR ID Card
+# การใช้งาน OCR บน Coway Mall
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+เอกสารนี้จัดทำโดยทีม **Digital Strategy (DT) Coway Thailand**  
+Production วันที่ 30 กันยายน 2025 เวลา 14:00 น.  
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+---
 
-## Build your site
+## OCR คืออะไร
 
-Build your site **for production**:
+**OCR (Optical Character Recognition)** คือเครื่องมือที่ช่วยอ่านข้อความจากภาพ  
 
-```bash
-npm run build
-```
+- ใช้เฉพาะ **เลขบัตรประชาชน** และ **วันเดือนปีเกิด**  
+- การทำงาน: แปลงข้อมูลจากภาพ → เป็นข้อความอัตโนมัติ  
+---
 
-The static files are generated in the `build` folder.
+## ตัวอย่างการอ่านข้อมูลบน Coway Mall
 
-## Deploy your site
+- เลขประจำตัวประชาชน(13 หลัก) : `X-XXXX-XXXXX-XX-X`  
+- วันเกิด : `DD/MM/YYYY`  
 
-Test your production build locally:
+---
 
-```bash
-npm run serve
-```
+## เงื่อนไขการถ่ายภาพบัตรประชาชน
 
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
+- วางบัตรบนพื้นเรียบ **ไม่มีลวดลายหรืออักษร** เช่น โต๊ะ กระดาษ A4  
+- จัดให้อยู่ในกรอบที่ระบบกำหนด **ไม่เว้นพื้นที่ว่างมากเกินไป**  
+- ต้องไม่มี **แสงสะท้อนหรือเงา**  
+- ห้ามปิดบังข้อมูลบนบัตร  
+- ห้ามใส่ข้อความหรือสัญลักษณ์ใด ๆ ทับเลขบัตรประชาชน หรือวันเดือนปีเกิด  
+- การสแกนจะอ่านตัวเลขโดยตรงจากรูปถ่าย  
 
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+---
+
+## ตัวอย่างการถ่ายภาพบัตร
+
+### ✅ ภาพที่สามารถอ่านค่าได้
+- วางบัตรตรงๆ ไม่เอียง  
+- มีแสงเพียงพอ เห็นเลขบัตรประชาชนชัดเจน  
+- พื้นหลังเรียบ ไม่มีสิ่งรบกวน
+- ไม่มีอะไรปิดบังเลขบัตร และ วันเกิด  
+
+<div style={{textAlign:"center", marginBottom:"20px"}}>
+  <img src="/img/ocr-id-card/card-info-7.jpg" 
+       alt="ตัวอย่างบัตรประชาชนที่สามารถอ่านค่าได้" 
+       style={{maxWidth:"60%", borderRadius:"8px"}} />
+</div>
+
+<div style={{textAlign:"center", marginBottom:"20px"}}>
+  <img src="/img/ocr-id-card/card-info-6.png" 
+       alt="ตัวอย่างบัตรประชาชนที่สามารถอ่านค่าได้" 
+       style={{maxWidth:"60%", borderRadius:"8px"}} />
+</div>
+*ตัวอย่างการถ่ายภาพที่อ่านค่าได้*
+
+---
+
+### ❌ เอกสารที่ไม่สามารถอ่านค่าได้
+- ตัวหนังสือบังเลขที่บัตรประชาชน และบังวันเดือนปีเกิด  
+- พื้นหลังติดลายลักษณ์อักษรอื่นๆที่ไม่เกี่ยวข้อง แม้ไม่ได้อยู่ในกรอบ 
+- ภาพภ่ายเบลอ ตัวอักษรไม่ชัด หรือ ภาพเล็กเกินไป  
+- ภาพถ่ายติดเงา หรือ แสงสะท้อน ทำไห้ไม่สามารถอ่านค่าได้  
+
+<div style={{textAlign:"center", marginBottom:"20px"}}>
+  <img src="/img/ocr-id-card/card-info-2.png" 
+       alt="ตัวอย่างบัตรที่เบลอ" 
+       style={{maxWidth:"40%", margin:"0 10px", borderRadius:"8px"}} />
+  <img src="/img/ocr-id-card/card-info-3.png" 
+       alt="ตัวอย่างบัตรมีแสงสะท้อน" 
+       style={{maxWidth:"40%", margin:"0 10px", borderRadius:"8px"}} />
+  <img src="/img/ocr-id-card/card-info-4.png" 
+       alt="ตัวอย่างบัตรมีแสงสะท้อน" 
+       style={{maxWidth:"40%", margin:"0 10px", borderRadius:"8px"}} />
+  <img src="/img/ocr-id-card/card-info-5.png" 
+       alt="ตัวอย่างบัตรมีแสงสะท้อน" 
+       style={{maxWidth:"40%", margin:"0 10px", borderRadius:"8px"}} />
+</div>
+*ตัวอย่างการถ่ายภาพที่ไม่สามารถอ่านค่าได้*
+
+---
+
+## ข้อควรทราบ
+
+- ข้อมูลจากบัตรประชาชนจะถูกนำมาใช้เฉพาะในการสั่งซื้อและยืนยันตัวตน  
+- ระบบจะไม่เก็บภาพบัตรประชาชนเกินความจำเป็น และเป็นไปตามมาตรการ PDPA   
+
+---
+
+## คำถามที่พบบ่อย (FAQ)
+
+### Q1: หาก Scan แล้วเลขบัตรประชาชนไม่ถูกต้อง ทำอย่างไร?  
+**A:** แนะนำให้ทำรายการใหม่ โดยถ่ายในพื้นที่สว่าง พื้นหลังเรียบ และไม่มีเงาบนบัตร  
+> หมายเหตุ: จากการพัฒนาฟีเจอร์นี้ ทีม DT ยังไม่พบเคสที่อ่านค่าผิด แต่จะคอยดูแลต่อไป  
+
+---
+
+### Q2: หากทำรายการแล้ว แก้ไขตัวเลขได้ไหม?  
+**A:** ปัจจุบันสามารถแก้ไขข้อมูลได้ทุกค่า เช่น ชื่อ นามสกุล วันเดือนปีเกิด  
+แต่ **ไม่สามารถแก้ไขเลขบัตรประชาชนได้** เลขบัตรต้องมาจากการ Scan เท่านั้น  
+
+---
+
+### Q3: หากเลขบัตรประชาชนผิดหลังทำรายการแล้ว ทำอย่างไร?  
+**A:** สามารถแจ้งผ่าน **Sales Operation Cowaymall** เพื่อทำการแก้ไขได้  
