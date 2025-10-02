@@ -1,7 +1,7 @@
 {
   "backend": {
     "name": "github",
-    "repo": "your-github-username/coway-docs",
+    "repo": "kritchai-dt/coway-docs",
     "branch": "main"
   },
   "local_backend": true,
