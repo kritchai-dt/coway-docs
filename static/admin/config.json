@@ -1,0 +1,66 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "your-github-username/coway-docs",
+    "branch": "main"
+  },
+  "local_backend": true,
+  "media_folder": "static/img/uploads",
+  "public_folder": "/img/uploads",
+  "media_library": {
+    "name": "simple"
+  },
+  "publish_mode": "editorial_workflow",
+  "collections": [
+    {
+      "name": "payment",
+      "label": "การชำระเงิน",
+      "folder": "docs/payment",
+      "create": true,
+      "slug": "{{slug}}",
+      "extension": "md",
+      "fields": [
+        { "label": "หัวข้อ", "name": "title", "widget": "string" },
+        { "label": "ลำดับใน Sidebar", "name": "sidebar_position", "widget": "number", "required": false },
+        { "label": "เนื้อหา", "name": "body", "widget": "markdown" }
+      ]
+    },
+    {
+      "name": "service",
+      "label": "บริการงานช่าง",
+      "folder": "docs/service",
+      "create": true,
+      "slug": "{{slug}}",
+      "extension": "md",
+      "fields": [
+        { "label": "หัวข้อ", "name": "title", "widget": "string" },
+        { "label": "ลำดับใน Sidebar", "name": "sidebar_position", "widget": "number", "required": false },
+        { "label": "เนื้อหา", "name": "body", "widget": "markdown" }
+      ]
+    },
+    {
+      "name": "account",
+      "label": "บัญชีของฉัน",
+      "folder": "docs/account",
+      "create": true,
+      "slug": "{{slug}}",
+      "extension": "md",
+      "fields": [
+        { "label": "หัวข้อ", "name": "title", "widget": "string" },
+        { "label": "เนื้อหา", "name": "body", "widget": "markdown" }
+      ]
+    },
+    {
+      "name": "products",
+      "label": "สินค้าและบริการ",
+      "folder": "docs/products",
+      "create": true,
+      "slug": "{{slug}}",
+      "extension": "md",
+      "fields": [
+        { "label": "หัวข้อ", "name": "title", "widget": "string" },
+        { "label": "รายละเอียด", "name": "body", "widget": "markdown" }
+      ]
+    }
+  ]
+}
