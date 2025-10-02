@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: kritchai-dt/coway-docs
-  branch: master
+  branch: main
 
 local_backend: true
 
