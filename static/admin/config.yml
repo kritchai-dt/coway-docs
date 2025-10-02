@@ -55,3 +55,4 @@ collections:
     fields:
       - { label: "หัวข้อ", name: "title", widget: "string" }
       - { label: "รายละเอียด", name: "body", widget: "markdown" }
+
