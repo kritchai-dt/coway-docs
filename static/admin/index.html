@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Coway Docs CMS</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script>
+      const base = (window.__docusaurus?.baseUrl) || '/';
+      const cfg  = base.replace(/\/$/, '') + '/admin/config.yml';
+      window.CMS_MANUAL_INIT = true;
+      CMS.init({ configPath: cfg });
+    </script>
+  </body>
+</html>
