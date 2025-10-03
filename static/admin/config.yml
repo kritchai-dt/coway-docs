@@ -17,9 +17,16 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     fields:
-      - { label: "หัวข้อ", name: "title", widget: "string" }
-      - { label: "ลำดับใน Sidebar", name: "sidebar_position", widget: "number", required: false }
-      - { label: "เนื้อหา", name: "body", widget: "markdown" }
+      - label: "หัวข้อ"
+        name: "title"
+        widget: "string"
+      - label: "ลำดับใน Sidebar"
+        name: "sidebar_position"
+        widget: "number"
+        required: false
+      - label: "เนื้อหา"
+        name: "body"
+        widget: "markdown"
 
   - name: "service"
     label: "บริการงานช่าง"
@@ -28,6 +35,13 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     fields:
-      - { label: "หัวข้อ", name: "title", widget: "string" }
-      - { label: "ลำดับใน Sidebar", name: "sidebar_position", widget: "number", required: false }
-      - { label: "เนื้อหา", name: "body", widget: "markdown" }
+      - label: "หัวข้อ"
+        name: "title"
+        widget: "string"
+      - label: "ลำดับใน Sidebar"
+        name: "sidebar_position"
+        widget: "number"
+        required: false
+      - label: "เนื้อหา"
+        name: "body"
+        widget: "markdown"
