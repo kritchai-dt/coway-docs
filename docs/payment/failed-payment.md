@@ -1,5 +1,4 @@
 ---
-id: failed-payment
 title: การแก้ไขปัญหาชำระเงินไม่สำเร็จ
 sidebar_position: 5
 ---

@@ -1,5 +1,4 @@
 ---
-id: installment
 title: การผ่อนชำระ (Installment)
 sidebar_position: 3
 ---

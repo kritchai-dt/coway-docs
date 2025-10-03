@@ -1,5 +1,4 @@
 ---
-id: payment-methods
 title: วิธีการชำระเงิน
 sidebar_position: 1
 ---

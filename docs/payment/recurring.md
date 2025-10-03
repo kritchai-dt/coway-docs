@@ -1,5 +1,4 @@
 ---
-id: recurring
 title: การตัดบัตรอัตโนมัติ (Recurring Payment)
 sidebar_position: 2
 ---

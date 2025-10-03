@@ -1,5 +1,4 @@
 ---
-id: invoice
 title: ใบเสร็จและเอกสารการชำระเงิน
 sidebar_position: 4
 ---
