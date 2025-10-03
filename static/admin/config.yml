@@ -2,7 +2,7 @@ backend:
   name: github
   repo: kritchai-dt/coway-docs
   branch: main
-  base_url: https://coway-oauth.onrender.com 
+  base_url: https://coway-oauth.onrender.com
 
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
@@ -17,9 +17,7 @@ collections:
     create: true
     slug: "{{slug}}"
     extension: "md"
-    identifier_field: "title"
     fields:
       - { label: "หัวข้อ", name: "title", widget: "string" }
       - { label: "ลำดับใน Sidebar", name: "sidebar_position", widget: "number", required: false }
       - { label: "เนื้อหา", name: "body", widget: "markdown" }
-
