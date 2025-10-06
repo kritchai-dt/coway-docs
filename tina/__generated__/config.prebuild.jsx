@@ -1,18 +1,20 @@
+// tina/config.ts
 import { defineConfig } from "tinacms";
-
-export default defineConfig({
+var config_default = defineConfig({
   branch: process.env.TINA_BRANCH || "main",
-  clientId: process.env.TINA_PUBLIC_CLIENT_ID!, // จาก Tina Cloud
-  token: process.env.TINA_TOKEN!,               // จาก Tina Cloud
+  clientId: process.env.TINA_PUBLIC_CLIENT_ID,
+  // จาก Tina Cloud
+  token: process.env.TINA_TOKEN,
+  // จาก Tina Cloud
   build: {
     outputFolder: "static/admin",
-    publicFolder: "static",
+    publicFolder: "static"
   },
   media: {
     tina: {
       publicFolder: "static",
-      mediaRoot: "img/uploads",
-    },
+      mediaRoot: "img/uploads"
+    }
   },
   schema: {
     collections: [
@@ -27,16 +29,19 @@ export default defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true,
+            required: true
           },
           {
             type: "rich-text",
             name: "body",
             label: "Body",
-            isBody: true,
-          },
-        ],
-      },
-    ],
-  },
+            isBody: true
+          }
+        ]
+      }
+    ]
+  }
 });
+export {
+  config_default as default
+};

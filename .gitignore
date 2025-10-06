@@ -22,8 +22,3 @@ yarn-error.log*
 node_modules
 .env
 
-# Tina auto files
-.tina/
-tina-lock.json
-tina/__generated__/
-.env
