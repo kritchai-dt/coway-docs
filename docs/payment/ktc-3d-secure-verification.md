@@ -1,6 +1,6 @@
 ---
-title: การใช้งาน EMV 3-D Secure สำหรับบัตรเครดิต KTC
 sidebar_position: 7
+title: การใช้งาน EMV 3-D Secure สำหรับบัตรเครดิต KTC
 ---
 
 ***
