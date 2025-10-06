@@ -82,8 +82,24 @@ export type Query = {
   collections: Array<Collection>;
   node: Node;
   document: DocumentNode;
+  account: Account;
+  accountConnection: AccountConnection;
+  coway_connect_application: Coway_Connect_Application;
+  coway_connect_applicationConnection: Coway_Connect_ApplicationConnection;
+  coway_mall: Coway_Mall;
+  coway_mallConnection: Coway_MallConnection;
   payment: Payment;
   paymentConnection: PaymentConnection;
+  privacy: Privacy;
+  privacyConnection: PrivacyConnection;
+  product: Product;
+  productConnection: ProductConnection;
+  return: Return;
+  returnConnection: ReturnConnection;
+  service: Service;
+  serviceConnection: ServiceConnection;
+  shipping: Shipping;
+  shippingConnection: ShippingConnection;
 };
 
 
@@ -108,6 +124,51 @@ export type QueryDocumentArgs = {
 };
 
 
+export type QueryAccountArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryAccountConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<AccountFilter>;
+};
+
+
+export type QueryCoway_Connect_ApplicationArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryCoway_Connect_ApplicationConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Coway_Connect_ApplicationFilter>;
+};
+
+
+export type QueryCoway_MallArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryCoway_MallConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Coway_MallFilter>;
+};
+
+
 export type QueryPaymentArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -122,8 +183,91 @@ export type QueryPaymentConnectionArgs = {
   filter?: InputMaybe<PaymentFilter>;
 };
 
+
+export type QueryPrivacyArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPrivacyConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PrivacyFilter>;
+};
+
+
+export type QueryProductArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryProductConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ProductFilter>;
+};
+
+
+export type QueryReturnArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryReturnConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ReturnFilter>;
+};
+
+
+export type QueryServiceArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryServiceConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ServiceFilter>;
+};
+
+
+export type QueryShippingArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryShippingConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ShippingFilter>;
+};
+
 export type DocumentFilter = {
+  account?: InputMaybe<AccountFilter>;
+  coway_connect_application?: InputMaybe<Coway_Connect_ApplicationFilter>;
+  coway_mall?: InputMaybe<Coway_MallFilter>;
   payment?: InputMaybe<PaymentFilter>;
+  privacy?: InputMaybe<PrivacyFilter>;
+  product?: InputMaybe<ProductFilter>;
+  return?: InputMaybe<ReturnFilter>;
+  service?: InputMaybe<ServiceFilter>;
+  shipping?: InputMaybe<ShippingFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -163,10 +307,10 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Payment | Folder;
+export type DocumentNode = Account | Coway_Connect_Application | Coway_Mall | Payment | Privacy | Product | Return | Service | Shipping | Folder;
 
-export type Payment = Node & Document & {
-  __typename?: 'Payment';
+export type Account = Node & Document & {
+  __typename?: 'Account';
   title: Scalars['String']['output'];
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
@@ -187,6 +331,87 @@ export type RichTextFilter = {
   exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type AccountFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type AccountConnectionEdges = {
+  __typename?: 'AccountConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Account>;
+};
+
+export type AccountConnection = Connection & {
+  __typename?: 'AccountConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<AccountConnectionEdges>>>;
+};
+
+export type Coway_Connect_Application = Node & Document & {
+  __typename?: 'Coway_connect_application';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type Coway_Connect_ApplicationFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type Coway_Connect_ApplicationConnectionEdges = {
+  __typename?: 'Coway_connect_applicationConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Coway_Connect_Application>;
+};
+
+export type Coway_Connect_ApplicationConnection = Connection & {
+  __typename?: 'Coway_connect_applicationConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<Coway_Connect_ApplicationConnectionEdges>>>;
+};
+
+export type Coway_Mall = Node & Document & {
+  __typename?: 'Coway_mall';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type Coway_MallFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type Coway_MallConnectionEdges = {
+  __typename?: 'Coway_mallConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Coway_Mall>;
+};
+
+export type Coway_MallConnection = Connection & {
+  __typename?: 'Coway_mallConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<Coway_MallConnectionEdges>>>;
+};
+
+export type Payment = Node & Document & {
+  __typename?: 'Payment';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
 export type PaymentFilter = {
   title?: InputMaybe<StringFilter>;
   body?: InputMaybe<RichTextFilter>;
@@ -205,6 +430,141 @@ export type PaymentConnection = Connection & {
   edges?: Maybe<Array<Maybe<PaymentConnectionEdges>>>;
 };
 
+export type Privacy = Node & Document & {
+  __typename?: 'Privacy';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type PrivacyFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type PrivacyConnectionEdges = {
+  __typename?: 'PrivacyConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Privacy>;
+};
+
+export type PrivacyConnection = Connection & {
+  __typename?: 'PrivacyConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<PrivacyConnectionEdges>>>;
+};
+
+export type Product = Node & Document & {
+  __typename?: 'Product';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ProductFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ProductConnectionEdges = {
+  __typename?: 'ProductConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Product>;
+};
+
+export type ProductConnection = Connection & {
+  __typename?: 'ProductConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ProductConnectionEdges>>>;
+};
+
+export type Return = Node & Document & {
+  __typename?: 'Return';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ReturnFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ReturnConnectionEdges = {
+  __typename?: 'ReturnConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Return>;
+};
+
+export type ReturnConnection = Connection & {
+  __typename?: 'ReturnConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ReturnConnectionEdges>>>;
+};
+
+export type Service = Node & Document & {
+  __typename?: 'Service';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ServiceFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ServiceConnectionEdges = {
+  __typename?: 'ServiceConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Service>;
+};
+
+export type ServiceConnection = Connection & {
+  __typename?: 'ServiceConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ServiceConnectionEdges>>>;
+};
+
+export type Shipping = Node & Document & {
+  __typename?: 'Shipping';
+  title: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ShippingFilter = {
+  title?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ShippingConnectionEdges = {
+  __typename?: 'ShippingConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Shipping>;
+};
+
+export type ShippingConnection = Connection & {
+  __typename?: 'ShippingConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ShippingConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -212,8 +572,24 @@ export type Mutation = {
   deleteDocument: DocumentNode;
   createDocument: DocumentNode;
   createFolder: DocumentNode;
+  updateAccount: Account;
+  createAccount: Account;
+  updateCoway_connect_application: Coway_Connect_Application;
+  createCoway_connect_application: Coway_Connect_Application;
+  updateCoway_mall: Coway_Mall;
+  createCoway_mall: Coway_Mall;
   updatePayment: Payment;
   createPayment: Payment;
+  updatePrivacy: Privacy;
+  createPrivacy: Privacy;
+  updateProduct: Product;
+  createProduct: Product;
+  updateReturn: Return;
+  createReturn: Return;
+  updateService: Service;
+  createService: Service;
+  updateShipping: Shipping;
+  createShipping: Shipping;
 };
 
 
@@ -250,6 +626,42 @@ export type MutationCreateFolderArgs = {
 };
 
 
+export type MutationUpdateAccountArgs = {
+  relativePath: Scalars['String']['input'];
+  params: AccountMutation;
+};
+
+
+export type MutationCreateAccountArgs = {
+  relativePath: Scalars['String']['input'];
+  params: AccountMutation;
+};
+
+
+export type MutationUpdateCoway_Connect_ApplicationArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Coway_Connect_ApplicationMutation;
+};
+
+
+export type MutationCreateCoway_Connect_ApplicationArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Coway_Connect_ApplicationMutation;
+};
+
+
+export type MutationUpdateCoway_MallArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Coway_MallMutation;
+};
+
+
+export type MutationCreateCoway_MallArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Coway_MallMutation;
+};
+
+
 export type MutationUpdatePaymentArgs = {
   relativePath: Scalars['String']['input'];
   params: PaymentMutation;
@@ -261,13 +673,104 @@ export type MutationCreatePaymentArgs = {
   params: PaymentMutation;
 };
 
+
+export type MutationUpdatePrivacyArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PrivacyMutation;
+};
+
+
+export type MutationCreatePrivacyArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PrivacyMutation;
+};
+
+
+export type MutationUpdateProductArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ProductMutation;
+};
+
+
+export type MutationCreateProductArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ProductMutation;
+};
+
+
+export type MutationUpdateReturnArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ReturnMutation;
+};
+
+
+export type MutationCreateReturnArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ReturnMutation;
+};
+
+
+export type MutationUpdateServiceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ServiceMutation;
+};
+
+
+export type MutationCreateServiceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ServiceMutation;
+};
+
+
+export type MutationUpdateShippingArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ShippingMutation;
+};
+
+
+export type MutationCreateShippingArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ShippingMutation;
+};
+
 export type DocumentUpdateMutation = {
+  account?: InputMaybe<AccountMutation>;
+  coway_connect_application?: InputMaybe<Coway_Connect_ApplicationMutation>;
+  coway_mall?: InputMaybe<Coway_MallMutation>;
   payment?: InputMaybe<PaymentMutation>;
+  privacy?: InputMaybe<PrivacyMutation>;
+  product?: InputMaybe<ProductMutation>;
+  return?: InputMaybe<ReturnMutation>;
+  service?: InputMaybe<ServiceMutation>;
+  shipping?: InputMaybe<ShippingMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
+  account?: InputMaybe<AccountMutation>;
+  coway_connect_application?: InputMaybe<Coway_Connect_ApplicationMutation>;
+  coway_mall?: InputMaybe<Coway_MallMutation>;
   payment?: InputMaybe<PaymentMutation>;
+  privacy?: InputMaybe<PrivacyMutation>;
+  product?: InputMaybe<ProductMutation>;
+  return?: InputMaybe<ReturnMutation>;
+  service?: InputMaybe<ServiceMutation>;
+  shipping?: InputMaybe<ShippingMutation>;
+};
+
+export type AccountMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type Coway_Connect_ApplicationMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type Coway_MallMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
 export type PaymentMutation = {
@@ -275,7 +778,105 @@ export type PaymentMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type PrivacyMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ProductMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ReturnMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ServiceMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ShippingMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type AccountPartsFragment = { __typename: 'Account', title: string, body?: any | null };
+
+export type Coway_Connect_ApplicationPartsFragment = { __typename: 'Coway_connect_application', title: string, body?: any | null };
+
+export type Coway_MallPartsFragment = { __typename: 'Coway_mall', title: string, body?: any | null };
+
 export type PaymentPartsFragment = { __typename: 'Payment', title: string, body?: any | null };
+
+export type PrivacyPartsFragment = { __typename: 'Privacy', title: string, body?: any | null };
+
+export type ProductPartsFragment = { __typename: 'Product', title: string, body?: any | null };
+
+export type ReturnPartsFragment = { __typename: 'Return', title: string, body?: any | null };
+
+export type ServicePartsFragment = { __typename: 'Service', title: string, body?: any | null };
+
+export type ShippingPartsFragment = { __typename: 'Shipping', title: string, body?: any | null };
+
+export type AccountQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type AccountQuery = { __typename?: 'Query', account: { __typename: 'Account', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type AccountConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<AccountFilter>;
+}>;
+
+
+export type AccountConnectionQuery = { __typename?: 'Query', accountConnection: { __typename?: 'AccountConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AccountConnectionEdges', cursor: string, node?: { __typename: 'Account', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type Coway_Connect_ApplicationQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type Coway_Connect_ApplicationQuery = { __typename?: 'Query', coway_connect_application: { __typename: 'Coway_connect_application', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type Coway_Connect_ApplicationConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Coway_Connect_ApplicationFilter>;
+}>;
+
+
+export type Coway_Connect_ApplicationConnectionQuery = { __typename?: 'Query', coway_connect_applicationConnection: { __typename?: 'Coway_connect_applicationConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Coway_connect_applicationConnectionEdges', cursor: string, node?: { __typename: 'Coway_connect_application', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type Coway_MallQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type Coway_MallQuery = { __typename?: 'Query', coway_mall: { __typename: 'Coway_mall', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type Coway_MallConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Coway_MallFilter>;
+}>;
+
+
+export type Coway_MallConnectionQuery = { __typename?: 'Query', coway_mallConnection: { __typename?: 'Coway_mallConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Coway_mallConnectionEdges', cursor: string, node?: { __typename: 'Coway_mall', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type PaymentQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -296,6 +897,122 @@ export type PaymentConnectionQueryVariables = Exact<{
 
 export type PaymentConnectionQuery = { __typename?: 'Query', paymentConnection: { __typename?: 'PaymentConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PaymentConnectionEdges', cursor: string, node?: { __typename: 'Payment', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
+export type PrivacyQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type PrivacyQuery = { __typename?: 'Query', privacy: { __typename: 'Privacy', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type PrivacyConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PrivacyFilter>;
+}>;
+
+
+export type PrivacyConnectionQuery = { __typename?: 'Query', privacyConnection: { __typename?: 'PrivacyConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PrivacyConnectionEdges', cursor: string, node?: { __typename: 'Privacy', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ProductQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ProductQuery = { __typename?: 'Query', product: { __typename: 'Product', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ProductConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ProductFilter>;
+}>;
+
+
+export type ProductConnectionQuery = { __typename?: 'Query', productConnection: { __typename?: 'ProductConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProductConnectionEdges', cursor: string, node?: { __typename: 'Product', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ReturnQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ReturnQuery = { __typename?: 'Query', return: { __typename: 'Return', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ReturnConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ReturnFilter>;
+}>;
+
+
+export type ReturnConnectionQuery = { __typename?: 'Query', returnConnection: { __typename?: 'ReturnConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ReturnConnectionEdges', cursor: string, node?: { __typename: 'Return', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ServiceQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ServiceQuery = { __typename?: 'Query', service: { __typename: 'Service', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ServiceConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ServiceFilter>;
+}>;
+
+
+export type ServiceConnectionQuery = { __typename?: 'Query', serviceConnection: { __typename?: 'ServiceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServiceConnectionEdges', cursor: string, node?: { __typename: 'Service', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ShippingQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ShippingQuery = { __typename?: 'Query', shipping: { __typename: 'Shipping', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ShippingConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ShippingFilter>;
+}>;
+
+
+export type ShippingConnectionQuery = { __typename?: 'Query', shippingConnection: { __typename?: 'ShippingConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ShippingConnectionEdges', cursor: string, node?: { __typename: 'Shipping', id: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export const AccountPartsFragmentDoc = gql`
+    fragment AccountParts on Account {
+  __typename
+  title
+  body
+}
+    `;
+export const Coway_Connect_ApplicationPartsFragmentDoc = gql`
+    fragment Coway_connect_applicationParts on Coway_connect_application {
+  __typename
+  title
+  body
+}
+    `;
+export const Coway_MallPartsFragmentDoc = gql`
+    fragment Coway_mallParts on Coway_mall {
+  __typename
+  title
+  body
+}
+    `;
 export const PaymentPartsFragmentDoc = gql`
     fragment PaymentParts on Payment {
   __typename
@@ -303,6 +1020,212 @@ export const PaymentPartsFragmentDoc = gql`
   body
 }
     `;
+export const PrivacyPartsFragmentDoc = gql`
+    fragment PrivacyParts on Privacy {
+  __typename
+  title
+  body
+}
+    `;
+export const ProductPartsFragmentDoc = gql`
+    fragment ProductParts on Product {
+  __typename
+  title
+  body
+}
+    `;
+export const ReturnPartsFragmentDoc = gql`
+    fragment ReturnParts on Return {
+  __typename
+  title
+  body
+}
+    `;
+export const ServicePartsFragmentDoc = gql`
+    fragment ServiceParts on Service {
+  __typename
+  title
+  body
+}
+    `;
+export const ShippingPartsFragmentDoc = gql`
+    fragment ShippingParts on Shipping {
+  __typename
+  title
+  body
+}
+    `;
+export const AccountDocument = gql`
+    query account($relativePath: String!) {
+  account(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...AccountParts
+  }
+}
+    ${AccountPartsFragmentDoc}`;
+export const AccountConnectionDocument = gql`
+    query accountConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AccountFilter) {
+  accountConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...AccountParts
+      }
+    }
+  }
+}
+    ${AccountPartsFragmentDoc}`;
+export const Coway_Connect_ApplicationDocument = gql`
+    query coway_connect_application($relativePath: String!) {
+  coway_connect_application(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Coway_connect_applicationParts
+  }
+}
+    ${Coway_Connect_ApplicationPartsFragmentDoc}`;
+export const Coway_Connect_ApplicationConnectionDocument = gql`
+    query coway_connect_applicationConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Coway_connect_applicationFilter) {
+  coway_connect_applicationConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Coway_connect_applicationParts
+      }
+    }
+  }
+}
+    ${Coway_Connect_ApplicationPartsFragmentDoc}`;
+export const Coway_MallDocument = gql`
+    query coway_mall($relativePath: String!) {
+  coway_mall(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Coway_mallParts
+  }
+}
+    ${Coway_MallPartsFragmentDoc}`;
+export const Coway_MallConnectionDocument = gql`
+    query coway_mallConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Coway_mallFilter) {
+  coway_mallConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Coway_mallParts
+      }
+    }
+  }
+}
+    ${Coway_MallPartsFragmentDoc}`;
 export const PaymentDocument = gql`
     query payment($relativePath: String!) {
   payment(relativePath: $relativePath) {
@@ -360,14 +1283,347 @@ export const PaymentConnectionDocument = gql`
   }
 }
     ${PaymentPartsFragmentDoc}`;
+export const PrivacyDocument = gql`
+    query privacy($relativePath: String!) {
+  privacy(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PrivacyParts
+  }
+}
+    ${PrivacyPartsFragmentDoc}`;
+export const PrivacyConnectionDocument = gql`
+    query privacyConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PrivacyFilter) {
+  privacyConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PrivacyParts
+      }
+    }
+  }
+}
+    ${PrivacyPartsFragmentDoc}`;
+export const ProductDocument = gql`
+    query product($relativePath: String!) {
+  product(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ProductParts
+  }
+}
+    ${ProductPartsFragmentDoc}`;
+export const ProductConnectionDocument = gql`
+    query productConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ProductFilter) {
+  productConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ProductParts
+      }
+    }
+  }
+}
+    ${ProductPartsFragmentDoc}`;
+export const ReturnDocument = gql`
+    query return($relativePath: String!) {
+  return(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ReturnParts
+  }
+}
+    ${ReturnPartsFragmentDoc}`;
+export const ReturnConnectionDocument = gql`
+    query returnConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ReturnFilter) {
+  returnConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ReturnParts
+      }
+    }
+  }
+}
+    ${ReturnPartsFragmentDoc}`;
+export const ServiceDocument = gql`
+    query service($relativePath: String!) {
+  service(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ServiceParts
+  }
+}
+    ${ServicePartsFragmentDoc}`;
+export const ServiceConnectionDocument = gql`
+    query serviceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ServiceFilter) {
+  serviceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ServiceParts
+      }
+    }
+  }
+}
+    ${ServicePartsFragmentDoc}`;
+export const ShippingDocument = gql`
+    query shipping($relativePath: String!) {
+  shipping(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ShippingParts
+  }
+}
+    ${ShippingPartsFragmentDoc}`;
+export const ShippingConnectionDocument = gql`
+    query shippingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ShippingFilter) {
+  shippingConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ShippingParts
+      }
+    }
+  }
+}
+    ${ShippingPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      payment(variables: PaymentQueryVariables, options?: C): Promise<{data: PaymentQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PaymentQueryVariables, query: string}> {
+      account(variables: AccountQueryVariables, options?: C): Promise<{data: AccountQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AccountQueryVariables, query: string}> {
+        return requester<{data: AccountQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AccountQueryVariables, query: string}, AccountQueryVariables>(AccountDocument, variables, options);
+      },
+    accountConnection(variables?: AccountConnectionQueryVariables, options?: C): Promise<{data: AccountConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AccountConnectionQueryVariables, query: string}> {
+        return requester<{data: AccountConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AccountConnectionQueryVariables, query: string}, AccountConnectionQueryVariables>(AccountConnectionDocument, variables, options);
+      },
+    coway_connect_application(variables: Coway_Connect_ApplicationQueryVariables, options?: C): Promise<{data: Coway_Connect_ApplicationQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_Connect_ApplicationQueryVariables, query: string}> {
+        return requester<{data: Coway_Connect_ApplicationQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_Connect_ApplicationQueryVariables, query: string}, Coway_Connect_ApplicationQueryVariables>(Coway_Connect_ApplicationDocument, variables, options);
+      },
+    coway_connect_applicationConnection(variables?: Coway_Connect_ApplicationConnectionQueryVariables, options?: C): Promise<{data: Coway_Connect_ApplicationConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_Connect_ApplicationConnectionQueryVariables, query: string}> {
+        return requester<{data: Coway_Connect_ApplicationConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_Connect_ApplicationConnectionQueryVariables, query: string}, Coway_Connect_ApplicationConnectionQueryVariables>(Coway_Connect_ApplicationConnectionDocument, variables, options);
+      },
+    coway_mall(variables: Coway_MallQueryVariables, options?: C): Promise<{data: Coway_MallQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_MallQueryVariables, query: string}> {
+        return requester<{data: Coway_MallQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_MallQueryVariables, query: string}, Coway_MallQueryVariables>(Coway_MallDocument, variables, options);
+      },
+    coway_mallConnection(variables?: Coway_MallConnectionQueryVariables, options?: C): Promise<{data: Coway_MallConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_MallConnectionQueryVariables, query: string}> {
+        return requester<{data: Coway_MallConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Coway_MallConnectionQueryVariables, query: string}, Coway_MallConnectionQueryVariables>(Coway_MallConnectionDocument, variables, options);
+      },
+    payment(variables: PaymentQueryVariables, options?: C): Promise<{data: PaymentQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PaymentQueryVariables, query: string}> {
         return requester<{data: PaymentQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PaymentQueryVariables, query: string}, PaymentQueryVariables>(PaymentDocument, variables, options);
       },
     paymentConnection(variables?: PaymentConnectionQueryVariables, options?: C): Promise<{data: PaymentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PaymentConnectionQueryVariables, query: string}> {
         return requester<{data: PaymentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PaymentConnectionQueryVariables, query: string}, PaymentConnectionQueryVariables>(PaymentConnectionDocument, variables, options);
+      },
+    privacy(variables: PrivacyQueryVariables, options?: C): Promise<{data: PrivacyQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PrivacyQueryVariables, query: string}> {
+        return requester<{data: PrivacyQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PrivacyQueryVariables, query: string}, PrivacyQueryVariables>(PrivacyDocument, variables, options);
+      },
+    privacyConnection(variables?: PrivacyConnectionQueryVariables, options?: C): Promise<{data: PrivacyConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PrivacyConnectionQueryVariables, query: string}> {
+        return requester<{data: PrivacyConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PrivacyConnectionQueryVariables, query: string}, PrivacyConnectionQueryVariables>(PrivacyConnectionDocument, variables, options);
+      },
+    product(variables: ProductQueryVariables, options?: C): Promise<{data: ProductQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProductQueryVariables, query: string}> {
+        return requester<{data: ProductQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProductQueryVariables, query: string}, ProductQueryVariables>(ProductDocument, variables, options);
+      },
+    productConnection(variables?: ProductConnectionQueryVariables, options?: C): Promise<{data: ProductConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProductConnectionQueryVariables, query: string}> {
+        return requester<{data: ProductConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ProductConnectionQueryVariables, query: string}, ProductConnectionQueryVariables>(ProductConnectionDocument, variables, options);
+      },
+    return(variables: ReturnQueryVariables, options?: C): Promise<{data: ReturnQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReturnQueryVariables, query: string}> {
+        return requester<{data: ReturnQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReturnQueryVariables, query: string}, ReturnQueryVariables>(ReturnDocument, variables, options);
+      },
+    returnConnection(variables?: ReturnConnectionQueryVariables, options?: C): Promise<{data: ReturnConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReturnConnectionQueryVariables, query: string}> {
+        return requester<{data: ReturnConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReturnConnectionQueryVariables, query: string}, ReturnConnectionQueryVariables>(ReturnConnectionDocument, variables, options);
+      },
+    service(variables: ServiceQueryVariables, options?: C): Promise<{data: ServiceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServiceQueryVariables, query: string}> {
+        return requester<{data: ServiceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServiceQueryVariables, query: string}, ServiceQueryVariables>(ServiceDocument, variables, options);
+      },
+    serviceConnection(variables?: ServiceConnectionQueryVariables, options?: C): Promise<{data: ServiceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServiceConnectionQueryVariables, query: string}> {
+        return requester<{data: ServiceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServiceConnectionQueryVariables, query: string}, ServiceConnectionQueryVariables>(ServiceConnectionDocument, variables, options);
+      },
+    shipping(variables: ShippingQueryVariables, options?: C): Promise<{data: ShippingQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ShippingQueryVariables, query: string}> {
+        return requester<{data: ShippingQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ShippingQueryVariables, query: string}, ShippingQueryVariables>(ShippingDocument, variables, options);
+      },
+    shippingConnection(variables?: ShippingConnectionQueryVariables, options?: C): Promise<{data: ShippingConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ShippingConnectionQueryVariables, query: string}> {
+        return requester<{data: ShippingConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ShippingConnectionQueryVariables, query: string}, ShippingConnectionQueryVariables>(ShippingConnectionDocument, variables, options);
       }
     };
   }
