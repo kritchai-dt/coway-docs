@@ -5,7 +5,7 @@ export default defineConfig({
   clientId: process.env.TINA_PUBLIC_CLIENT_ID!, // จาก Tina Cloud
   token: process.env.TINA_TOKEN!,               // จาก Tina Cloud
   build: {
-    outputFolder: "static/admin",
+    outputFolder: "admin",
     publicFolder: "static",
   },
   media: {

@@ -7,7 +7,7 @@ var config_default = defineConfig({
   token: process.env.TINA_TOKEN,
   // จาก Tina Cloud
   build: {
-    outputFolder: "static/admin",
+    outputFolder: "admin",
     publicFolder: "static"
   },
   media: {
