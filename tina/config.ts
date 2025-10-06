@@ -5,7 +5,7 @@ export default defineConfig({
   clientId: process.env.TINA_PUBLIC_CLIENT_ID!,
   token: process.env.TINA_TOKEN!,
   build: {
-    outputFolder: "admin/admin",
+    outputFolder: "static/admin",
     publicFolder: "static",
   },
   media: {
