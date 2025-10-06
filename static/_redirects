@@ -1,2 +1,0 @@
-# ให้ /admin ชี้ไปที่ index.html ของ CMS
-/admin    /admin/index.html   200
